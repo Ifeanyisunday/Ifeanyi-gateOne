@@ -1,5 +1,4 @@
 import random
-
 correct_number = 0
 incorrect_number = 0
 for index in range(10):
