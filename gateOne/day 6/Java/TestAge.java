@@ -3,12 +3,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.*;
 public class TestAge{
 
-	String dateOfBirth = "07-08-1994";
+	String dateOfBirth = "11-12-2021";
  
 	@Test
 	public void testAge(){
 		int calculateAge = Task1.findAge(dateOfBirth);
-		int expected = 29;
+		int expected = 2;
 		assertEquals(expected, calculateAge);
 	}
 
