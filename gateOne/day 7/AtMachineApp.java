@@ -3,39 +3,28 @@ public class AtMachineApp{
 	public static void main(String... args){
 
 		Scanner input = new Scanner(System.in);
-		ArrayList<String>profile1 = new ArrayList<String>();
-		ArrayList<String>profile2 = new ArrayList<String>();
+		ArrayList<String>accoutFirstName = new ArrayList<String>();
+		ArrayList<String>accoutLastName = new ArrayList<String>();
+		ArrayList<String>accoutPin = new ArrayList<String>();
 		System.out.println("Create your profile");
 		
-		System.out.println("Enter first name:");
-		String user1 = input.next();
-		profile1.add(user1);
-		System.out.println("Enter last name:");
-		String user2 = input.next();
-		profile1.add(user2);
-		System.out.println("Enter pin name:");
-		String pin1 = input.next();
-		profile1.add(pin1);
+		int count = 0;
+		do{
+			System.out.println("Enter first name:");
+			String user1 = input.next();
+			accoutFirstName.add(user1);
+			System.out.println("Enter last name:");
+			String user2 = input.next();
+			accoutLastName.add(user2);
+			System.out.println("Enter pin name:");
+			String pin1 = input.next();
+			accoutPin.add(pin1);
+			count++;
+			System.out.println("Do you want to create new Account?");
+			String createNew = input.next();
+		while(createNew.equalsIgnoreCase("yes"));
 
-		
-
-		
-
-		/*System.out.println("Enter first name:");
-		String user3 = input.next();
-		profile2[0] = user3;
-		System.out.println("Enter last name:");
-		String user4 = input.next();
-		profile2[1] = user4;
-		System.out.println("Enter pin name:");
-		String pin2 = input.next();
-		profile2[2] = pin2;*/
-		
-		int range = 
-		ArrayList<String>accountBalance = new ArrayList<String>();
-		
-		int profile1AccountBalance = accountBalance[0];
-		int profile2AccountBalance = accountBalance[1];		
+		ArrayList<String>accountBalance = new ArrayList<String>();		
 		
 		System.out.printf("%s%n%s%n%s%n%s%n%s%n", "Choose Transaction type:", "1. Deposit", "2. Withdraw", "3. Transfer", "4. Check Balance");
 		int index = input.nextInt();
@@ -46,7 +35,7 @@ public class AtMachineApp{
 			case 1:
 				System.out.println("enter deposit amount:");
 				int depositAmt = input.nextInt();
-				profile1AccountBalance += depositAmt;
+				accountBalance += depositAmt;
 				System.out.print(profile1AccountBalance);
 				break;
 			case 2:
