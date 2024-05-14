@@ -3,9 +3,13 @@ public class AtMachineApp{
 	public static void main(String... args){
 
 		Scanner input = new Scanner(System.in);
+
 		ArrayList<String>profile1 = new ArrayList<String>();
+
 		ArrayList<String>profile2 = new ArrayList<String>();
+
 		/*ArrayList<String>accoutLastName = new ArrayList<String>();
+
 		ArrayList<String>accoutPin = new ArrayList<String>();*/
 
 		ArrayList<ArrayList<String>>accountStore = new ArrayList<ArrayList<String>>();
@@ -16,9 +20,11 @@ public class AtMachineApp{
 			System.out.println("Enter first name:");
 			String userInput = input.next();
 			profile1.add(userInput);
+
 			System.out.println("Enter last name:");
 			String userInput2 = input.next();
 			profile1.add(userInput2);
+
 			System.out.println("Enter pin name:");
 			String pin1 = input.next();
 			profile1.add(pin1);
@@ -29,16 +35,19 @@ public class AtMachineApp{
 			String createNew = input.next();
 
 			if(createNew.equalsIgnoreCase("yes")){
-			System.out.println("Enter first name:");
-			String newUserInput = input.next();
-			profile2.add(userInput);
-			System.out.println("Enter last name:");
-			String newUserInput2 = input.next();
-			profile2.add(userInput2);
-			System.out.println("Enter pin name:");
-			String pin2 = input.next();
-			profile2.add(pin2);
-			accountStore.add(profile2);
+				System.out.println("Enter first name:");
+				String newUserInput = input.next();
+
+				profile2.add(userInput);
+				System.out.println("Enter last name:");
+				String newUserInput2 = input.next();
+
+				profile2.add(userInput2);
+				System.out.println("Enter pin name:");
+				String pin2 = input.next();
+
+				profile2.add(pin2);
+				accountStore.add(profile2);
 			}
 			
 			int count = 1;
@@ -51,16 +60,18 @@ public class AtMachineApp{
 
 		/*int transferAmt = 0;
 		int transferDone = 0;*/
+		int indexValue = 0;
+		int withdrawIndex = 0;
 		switch(index){
 			case 1:
 				System.out.println("Enter account first name:");
 				String accountName = input.next();
 				System.out.println("Enter deposit amount:");
 				int depositAmt = input.nextInt();
-				for(int i = 0; i < 1; i++){
+				for(int i = 0; i < accountStore.size(); i++){
 					for(int j = 0; j < accountStore.size(); j++){
-						if(accountName == accountStore.get(j).get(0)){
-							accountBalance.set(j, j + depositAmt);
+						if(accountName == accountStore.get(i).get(j)){
+							accountBalance.set(i, i + depositAmt);
 							System.out.print(accountBalance.get(j));
 							break;
 						}
@@ -72,16 +83,15 @@ public class AtMachineApp{
 				String accountName1 = input.next();
 				System.out.println("enter withdrawal amount:");
 				int withdrawAmt = input.nextInt();
-				for(int a = 0; a < 1; a++){
+				for(int a = 0; a < accountStore.size(); a++){
 					for(int b = 0; b < accountStore.size(); b++){
-						if(accountName1 == accountStore.get(b).get(0)){
-							int withdrawIndex = accountBalance.get(b);
-							if(withdrawIndex <= 0 || withdrawIndex < withdrawAmt){
+						if(accountName1 == accountStore.get(a).get(b)){
+							indexValue = accountBalance.get(b) - withdrawAmt;
+							if(indexValue <= 0 || indexValue < withdrawAmt){
 								System.out.print("your balance is too low, Add money to your account");
 							}else{
-								int withdrawBalance = accountBalance.set(b, b - withdrawAmt);
-								System.out.println(withdrawBalance);
-								/*System.out.println(accountBalance.get(b));*/
+								int withdrawBalance = accountBalance.set(b, withdrawIndex);
+								System.out.println(accountBalance.get(a));
 								break;
 							}
 						}
@@ -94,7 +104,7 @@ public class AtMachineApp{
 				System.out.println("enter transfer amount:");
 				int transferAmt = input.nextInt();
 
-				for(int c = 0; c < 1; c++){
+				for(int c = 0; c < accountStore.size(); c++){
 					for(int d = 0; d < accountStore.size(); d++){
 						if(enterName == accountStore.get(d).get(0)){
 							if(accountBalance.get(d) <= 0 || accountBalance.get(d) < transferAmt){
@@ -125,13 +135,14 @@ public class AtMachineApp{
 					for(int h = 0; h < accountStore.size(); h++){
 						if(newAcctName == accountStore.get(h).get(0)){
 							System.out.println(accountBalance.get(h));
-							
 						}
 					}
 				}
 				break;
 		}
 
+		
+		System.out.println(accountStore.get(0).get(0));
 		System.out.print("Do you want to continue? ");
 
 		
