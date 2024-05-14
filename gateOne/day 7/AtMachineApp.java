@@ -46,27 +46,30 @@ public class AtMachineApp{
 				int depositAmt = input.nextInt();
 				for(int i = 0; i < 1; i++){
 					for(int j = 0; j < accountStore.size(); j++){
-						if(accountName == accountStore.get(j).get(0)){
-							accountBalance.add(depositAmt);
-							System.out.print(accountBalance);
+						if(accountName == accountBalance.get(j).get(0)){
+							accountBalance.set(j, j + depositAmt);
+							System.out.print(accountBalance.get(j));
 							break;
 						}
 					}
 				}
 				break;
 			case 2:
+				System.out.println("Enter account first name:");
+				String accountName1 = input.next();
 				System.out.println("enter withdrawal amount:");
 				int mainBalance = 0;
 				int withdrawAmt = input.nextInt();
-				if(accountBalance.get(0) <= 0 && accountBalance.get(0) <= withdrawAmt){
-					System.out.print("your balance is too low, Add money to your account");
-				}else{
-					for(int j = 0; j < count; j++){
-						if(accountName == account.get(j).get(j)){
-							mainBalance = accountBalance.get(j);
-							mainBalance = mainBalance - withdrawAmt;
-							accountBalance.add(mainBalance);
-							System.out.print(accountBalance[j]);
+				for(int a = 0; a < 1; a++){
+					for(int b = 0; b < accountBalance.size(); b++){
+						if(accountName1 == accountBalance.get(b)){
+							if(accountBalance.get(b) <= 0 || accountBalance.get(b) < withdrawAmt){
+								System.out.print("your balance is too low, Add money to your account");
+							}else{
+								accountBalance.set(b, b - withdrawAmt);
+								System.out.print(accountBalance.get(b));
+								break;
+							}
 						}
 					}
 				}
@@ -80,9 +83,9 @@ public class AtMachineApp{
 				System.out.println("enter transfer amount:");
 				transferAmt = input.nextInt();
 
-				int range1 = 0;
-				for(int a = 0; a <= range1; a++){
-				if(enterName == account.get(a).get(a)){
+				
+				for(int c = 0; c <= range1; c++){
+				if(enterName == accountBalance.get(b).get(a)){
 					if(accountBalance.get(a) <= 0){
 						System.out.print("your balance is too low");
 					}else if(accountBalance.get(a) < transferAmt){
