@@ -27,6 +27,15 @@ public class MenstralApp{
 		LocalDate safe3 = fertilityPeriod2.plusDays(1);
 		LocalDate safe4 = dateOfNextPeriod.minusDays(1);
 
+		System.out.println("Check results ");
+		System.out.printf("%s%n%s%n%s%n%s%n")
+		int enterNumber = input.nextInt();
+		switch(enterNumber){
+			case 1:
+				
+
+
+		}
 		
 		
 		
