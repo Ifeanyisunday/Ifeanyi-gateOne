@@ -164,7 +164,7 @@ public class AtMachineApp1{
 				for(int g = 0; g < profile.length; g++){
 					for(int h = 0; h < profile.length; h++){
 						if(newAcctName.equals(profile[g][h])){
-							System.out.println(accountBalance[g]);
+							System.out.println("Your account balance is " + accountBalance[g] + " naira");
 							break;
 						}
 					}
@@ -328,7 +328,7 @@ public class AtMachineApp1{
 				for(int g = 0; g < profile.length; g++){
 					for(int h = 0; h < profile.length; h++){
 						if(newAcctName.equals(profile[g][h])){
-							System.out.println(accountBalance[g] + " naira");
+							System.out.println("Your account balance is " + accountBalance[g] + " naira");
 							break;
 						}
 					}
