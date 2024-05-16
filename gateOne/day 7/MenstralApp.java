@@ -27,18 +27,6 @@ public class MenstralApp{
 		LocalDate safe3 = fertilityPeriod2.plusDays(1);
 		LocalDate safe4 = dateOfNextPeriod.minusDays(1);
 
-		System.out.println("Check results ");
-		System.out.printf("%s%n%s%n%s%n%s%n")
-		int enterNumber = input.nextInt();
-		switch(enterNumber){
-			case 1:
-				
-
-
-		}
-		
-		
-		
 		System.out.println("Your next period will come on the " + dateOfNextPeriod);
 		System.out.println("Your ovulation date is " + startOfOvulation);
 		System.out.println("Your fertility period is between " + fertilityPeriod1 + fertilityPeriod2);
@@ -47,6 +35,7 @@ public class MenstralApp{
 		
 
 	}
+		
 
 
 }

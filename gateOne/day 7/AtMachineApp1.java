@@ -22,6 +22,9 @@ public class AtMachineApp1{
 			System.out.println("Enter pin");
 			String pin1 = input.next();
 			profile[0][2] = pin1;
+			System.out.println("Account created successfully");
+
+			int count = 1;
 
 			System.out.println("Do you want to create a new Account?");
 			String createNew = input.next();
@@ -38,6 +41,8 @@ public class AtMachineApp1{
 				System.out.println("Enter pin");
 				String pin2 = input.next();
 				profile[1][2] = pin2;
+				System.out.println("Account created successfully");
+
 
 			}
 					
@@ -147,9 +152,17 @@ public class AtMachineApp1{
 							System.out.println("Dear " + recipent + " you just received " + transferAmt + " from " + enterName);
 							System.out.println("your account balance is now " + accountBalance[e] + " naira");
 							break;
-						} 
+						}else{
+							accountBalance[0] = accountBalance[0] + transferAmt;
+							accountBalance[0] = accountBalance[0] - transferAmt;
+							System.out.println("Account " + recipent + " does not exist");
+							break;
+						}
 					}
 				}
+				System.out.println("");
+				System.out.println("Create new account");
+				create(profile, accountBalance);
 				System.out.println("");
 				System.out.print("Do you want to continue? ");
 				String decision3 = input.next();
@@ -197,6 +210,25 @@ public class AtMachineApp1{
 		System.out.println("WELCOME TO BANKE BANK");
 
 		System.out.println("===============================");
+
+	}
+
+	public static void create(String[][] profile,  int[]accountBalance){
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter first name:");
+				String newUserInput = input.next();
+				profile[1][0] = newUserInput;
+
+				System.out.println("Enter last name:");
+				String newUserInput2 = input.next();
+				profile[1][1] = newUserInput2;
+
+				System.out.println("Enter pin");
+				String pin2 = input.next();
+				profile[1][2] = pin2;
+				System.out.println("Account created successfully");
+
+
 
 	}
 
@@ -311,9 +343,17 @@ public class AtMachineApp1{
 							System.out.println("Dear " + recipent + " you just received " + transferAmt + " from " + enterName);
 							System.out.println("your account balance is now " + accountBalance[e] + " naira");
 							break;
+						}else{
+							accountBalance[0] = accountBalance[0] + transferAmt;
+							accountBalance[0] = accountBalance[0] - transferAmt;
+							System.out.println("Account " + recipent + " does not exist");
+							break;
 						} 
 					}
 				}
+				System.out.println("");
+				System.out.println("Create new account");
+				create(profile, accountBalance);
 				System.out.println("");
 				System.out.print("Do you want to continue? ");
 				String decision3 = input.next();
