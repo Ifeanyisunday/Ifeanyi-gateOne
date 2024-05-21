@@ -29,7 +29,7 @@ public class MenstralApp{
 
 		System.out.println("Your next period will come on the " + dateOfNextPeriod);
 		System.out.println("Your ovulation date is " + startOfOvulation);
-		System.out.println("Your fertility period is between " + fertilityPeriod1 + fertilityPeriod2);
+		System.out.println("Your fertility period is between " + fertilityPeriod1 + "-" + fertilityPeriod2);
 		System.out.println("Your safe period is between " + safe1 + " - " + safe2 + " and " + safe3 + " - " + safe4);
 		
 		
