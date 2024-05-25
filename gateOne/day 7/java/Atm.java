@@ -94,23 +94,24 @@ public class Atm{
 			int balance2 = 0;
 			int increment1 = 0;
 			int increment2 = 0;
-			for(String index4 : profileName){
-				if(name4.equals(index4) && userTransferAmount <= accountBalance.get(increment1)){
-					balance = accountBalance.get(increment1) - userTransferAmount;
-					for(String count4 : profileName){
-						if(enterRecipentName.equals(count4)){
-						balance2 = accountBalance.get(increment2) + userTransferAmount;
-						accountBalance.set(increment2, balance2);
-						System.out.println("Dear " + enterRecipentName + " You just received " + userTransferAmount + "naira from " + name4);
-						increment2++;
+			for(int index4 = 0; index4 < accountBalance.size(); index4++){
+				if(name4.equals(profileName.get(index4))){
+					if(userTransferAmount <= accountBalance.get(index4)){
+						balance = accountBalance.get(index4) - userTransferAmount;
+						accountBalance.set(index4, balance);
+						for(int count4 = 0; count4 < accountBalance.size(); count4++){
+							if(enterRecipentName.equals(profileName.get(count4))){
+							balance2 = accountBalance.get(count4) + userTransferAmount;
+							accountBalance.set(count4, balance2);
+							System.out.println("Dear " + enterRecipentName + " You just received " + userTransferAmount + "naira from " + name4);
 						}
 					}
-				}else if(!name4.equals(index4) && userTransferAmount > accountBalance.get(increment1)){
+				}else if(!name4.equals(profileName.get(index4)) && userTransferAmount > accountBalance.get(index4)){
 					System.out.println("Transaction failed!! your balance is too low");
 					break;
 				}
-				increment1++;
 			}
+				
 			System.out.println("Do you want to continue?");
 			String desicion4 = input.next();
 			if(desicion4.equalsIgnoreCase("yes")){
