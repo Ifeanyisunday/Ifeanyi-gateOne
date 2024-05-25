@@ -6,10 +6,10 @@ let periodEnd = new Date(periodStart);
 periodEnd.setDate(periodStart.getDate() + 28);
 
 let nextPeriod = new Date(periodEnd);
-nextPeriod.setDate(periodEnd.getDate() + 1);
+nextPeriod.setDate(periodEnd.getDate() + cycleLength);
 
 let ovulationPeriod = new Date(nextPeriod);
-ovulationPeriod.setDate(nextPeriod.getDate() - cycleLength);
+ovulationPeriod.setDate(nextPeriod.getDate() - 14);
 
 let fertilePeriod1 = new Date(ovulationPeriod);
 fertilePeriod1.setDate(ovulationPeriod.getDate() - 5);
