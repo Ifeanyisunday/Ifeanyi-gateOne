@@ -20,7 +20,7 @@ def add_contact():
 		phonenumber = str(input("Enter mobile number: "))
 		phone_no.append(phonenumber)
 		print(">>>>>>>>>> Contact saved successfully <<<<<<<<<<<<")
-		decision = str(input("Do you want to create another account? "))
+		decision = str(input("Do you want to add more contacts? "))
 		if decision.lower() != "yes":
 			break
 	choice = str(input("Do you want to continue? "))
@@ -54,7 +54,7 @@ def findcontact_byfisrtname():
 
 def findcontact_bylastname():
 	count = 0
-	user_last_name = str(input("Enter first name: "))
+	user_last_name = str(input("Enter last name: "))
 	for element in last_name:
 		if user_last_name == element:
 			print(first_name[count], last_name[count],"\n",phone_no[count])
@@ -72,9 +72,9 @@ def edit_contact():
 			print(first_name[count], last_name[count])
 			print("")
 			print("Edit contact")
-			new_firstname = str(input("Enter first name: "))
+			new_firstname = str(input("Enter new first name: "))
 			first_name[count] = new_firstname
-			new_lastname = str(input("Enter first name: "))
+			new_lastname = str(input("Enter new last name: "))
 			last_name[count] = new_lastname
 			new_number = str(input("Enter new phone number: "))
 			phone_no[count] = new_number
@@ -98,7 +98,7 @@ def menu():
 		case 1: add_contact()
 		case 2: "remove_contact"
 		case 3: findcontact_byphonenumber()
-		case 4: findcontact_byfisrtname
+		case 4: findcontact_byfisrtname()
 		case 5: findcontact_bylastname()
 		case 6: edit_contact()
 		case 7: menu()
